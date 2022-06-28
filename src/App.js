@@ -34,10 +34,10 @@ function App() {
     evt.preventDefault() 
 
     const copyTodos = [...todos]; 
-    copyTodos.push({name : newTodo, priority : handleTodoradio(evt)})
+    copyTodos.push({name : newTodo, priority : priorityValue})
     setTodos(copyTodos)
     setNewTodo("")
-    setpriorityValue("")
+    // setpriorityValue("")
 
 
   }
@@ -55,10 +55,10 @@ function App() {
         <input id='new-todo' type='text' value={newTodo} onChange = {handleTodoInput} />
 
         <label htmlFor="high">High</label>
-        <input type="radio" id="high" name="high" value= "high" onSelect = {handleTodoradio} />
+        <input type="radio" id="high" name="high" value= "high" onChange = {handleTodoradio} />
 
         <label htmlFor="low">Low</label>
-        <input type="radio" id="low" name="low" value="low" onSelect = {handleTodoradio} />
+        <input type="radio" id="low" name="low" value="low" onChange = {handleTodoradio} />
 
         <input type="submit" value = "save a new todo"/>
 
